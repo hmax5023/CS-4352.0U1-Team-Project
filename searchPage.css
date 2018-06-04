@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body  {
+	background-color: whitesmoke;
+	font-family: helvetica;
+}
+
+div.box {
+	margin-top: 25%;
+	align-top: 150px;
+	align_left: 300px;
+    border: 3px solid grey;
+	object-position: center;
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+	position: center;
+    width: 700px;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    cursor: pointer;
+	border-radius: 4px;
+	width: 200px;
+}
+
+table { width: 500px; }
+.grow { width: 100%; }​
+
+ul.a {
+    list-style-type: circle;
+}
+
+div.info {
+	text-size: 12px;
+	position: fixed;
+	bottom: 45px;
+	color: blue;
+}
+
+div.footer {
+	text-size: 12px;
+	position: fixed;
+	bottom: 25px;
+	color: Tomato;
+}
+
+
+/* by Marco Mereu */
+
+
