@@ -42,7 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AlphabeticShift.cs" />
+    <Compile Include="CircularShift.cs" />
+    <Compile Include="Counter.cs" />
+    <Compile Include="LineStorage.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="..\..\CyberMinerTermProject\MasterControl.cs">
+      <Link>MasterControl.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

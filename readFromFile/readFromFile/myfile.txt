@@ -1,7 +1,0 @@
-﻿hello
-reading from
-the file
-wow!
-10/10
-cool
-sup dawg
