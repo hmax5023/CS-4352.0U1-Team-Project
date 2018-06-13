@@ -45,7 +45,6 @@
     <Compile Include="AlphabeticShift.cs" />
     <Compile Include="CircularShift.cs" />
     <Compile Include="Counter.cs" />
-    <Compile Include="Input.cs" />
     <Compile Include="LineStorage.cs" />
     <Compile Include="MasterControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

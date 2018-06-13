@@ -25,7 +25,7 @@ namespace CyberMiner
             return NextChar; //placeholder
         }
         //returns number of words in shift
-        public int Word (int Shift)
+        public int Word(int Shift)
         {
             return Shift; //placeholder
         }
