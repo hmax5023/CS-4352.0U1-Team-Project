@@ -10,12 +10,19 @@ namespace CyberMiner
     //provides routines to access individual characters and words of shifted lines
     public class CircularShift
     {
+        //constructor
+        public LineStorage LineStorage { get; set; }
+        public CircularShift(LineStorage LS)
+        {
+            LineStorage = LS;
+        }
+
         public void Setup()
         {
 
         }
-        //causes the character in a word of the shift to be e
-        public void SetChar(int Shift, int Word, int Character, char NextChar)
+        //causes the character in a word of the shift to be NextChar
+        private void SetChar(int Shift, int Word, int Character, char NextChar)
         {
 
         }
@@ -24,6 +31,7 @@ namespace CyberMiner
         {
             return NextChar; //placeholder
         }
+
         //returns number of words in shift
         public int Word(int Shift)
         {

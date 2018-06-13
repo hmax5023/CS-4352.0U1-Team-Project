@@ -37,16 +37,24 @@ namespace CyberMiner
             string newLine = String.Join(" ", words);
             FileLines[lineCount - 1] = newLine;
         }
-        public int Char(int word, int line, int character)
+
+        public char Char(int lineCount, int wordCount, int characterCount)
         {
-            //returns an int representing a character in a word of a line
-            //returns blank if out of range
-            return character; //placeholder
+            string line = FileLines[lineCount - 1];
+            string[] words = line.Split(' ');
+            //wordcount-1 to start at 0 index
+            string word = words[wordCount - 1];
+            char character = word[characterCount - 1];
+            return character;
         }
-        public int Word(int line)
+
+        public int Word(int lineNumber)
         {
-            //returns number of words in a line
-            return line; //placeholder
+            string line = FileLines[lineNumber - 1];
+            //split by space
+            string[] words = line.Split(' ');
+            int wordCount = words.Length;
+            return wordCount;
         }
     }
 }
