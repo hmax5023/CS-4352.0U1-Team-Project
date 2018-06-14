@@ -1,88 +1,97 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lineStorage
+namespace CyberMiner
 {
-    class Program
+    public class AlphabeticShift
     {
-        private static int count;
-        private static object delimiterChars;
-
-        public string SetChar { get; }
-        public string Char { get; }
-        public string Word { get => Word; set => Word = value; }
-
-
-        
-
-        static void Main(string[] args)
+        //constructor
+        public LineStorage {get; set;}
+        public AlphabeticShift(LineStorage LS)
         {
-            
+            LineStorage = LS;
+        }
+
+    //alphabetizer class
+    public void Alpha(char character, int word, int shift, char nextChar)
+    {
+        string line = FileLines[lineCount - 1];
+        string[] words = line.Split('');
+        string word = words[wordCount - 1];
+        char character = word[characterCount - 1];
+
+        StringBuilder wordAppend = new StringBuilder();
+        StringBuilder oldLine = new StringBuilder();
+
+        for (int i = 0; i < word.Length; i++)
+        {
+            if (toAppend)
+            {
+                string toAdd = line[i];
+                if (i == firstIndex)
+                {
+                    toAppend = false;
+                    oldLine.Append(UpperCaseFirstChar(toAdd)).Append("");
+                } else
+                {
+                    wordAppend.Append(toAdd).Append("");
+                }
+            } else
+            {
+                oldLine.Append(line[i]).Append("");
+            }
+        }
         
-        //splitting the word in single characters
-        //reference: docs.microsoft.com
-        SetChar(){
+        //adding the words in a sorted list
+        oldLine.Append(wordAppend.ToString());
+        SortedList.Add(oldLine.ToString().Trim());
 
-                string[] lines = System.IO.File.ReadAllLines(@"myfile.txt");
-                string[] words = lines.Split('');
-                foreach (var word in words)
-                {
-                    System.Console.WriteLine($"<{word}>");
-                }
+        //return the sorted list
+        System.Collections.sort(SortedList);
+    }
 
-                //I am sure I am missing letters!!
-                string[] letters = word.Split('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u,', 'w', 'z');
-                string[] letters = TaskExtensions.Slpit(delimiterChars);
-                foreach (var letter in word )
-                {
-                    System.Console.WriteLine($"<{letter}>");
-                }
+   
 
+    //checking if the first word starts with a capitol letter
+    private string UpperCaseFirstChar(string line)
+    {
+        if (line == null)
+        {
+            throw new ArgumentNullException(nameof(line));
+        }
 
-            }
-            //splitting the word in sigle letters and displaying the position of each letter in the word
-            Char(){
-                string[] lines = System.IO.File.ReadAllLines(@"myfile.txt");
-                string[] words = lines.Split('');
-                foreach (var word in words)
-                {
-                    System.Console.WriteLine($"<{word}>");
-                    count++;
-                    //display # wornd on the sentence
-                    Console.WriteLine("Le word is in position n:", count++);
-                }
-
-                //I am sure I am missing letters!!
-                string[] letters = word.Split('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u,', 'w', 'z');
-                string[] letters = TaskExtensions.Slpit(delimiterChars);
-                foreach (var letter in word)
-                {
-                    System.Console.WriteLine($"<{letter}>");
-                    count++;
-                    //display # letter on the word
-                    Console.WriteLine("The letters on position:", count++);
-                }
-                
-            }
+        if (line.Length <= 1)
+        {
+            return line;
+            //return string line.ToUpperCase();
+        }
+        return oldLine.ToUpperCase(line);
+        //return oldLine.ToUpperCase(line.ToCharArray(0)) + line.Substring(1);
+    }
 
 
-            //spliting each line/sentence in single words, counting the words and displaying the count
-            // reference: docs.microsoft.com
-            Word(){
-                string[] lines = System.IO.File.ReadAllLines(@"myfile.txt");
-                string[] words = lines.Split('');
-                foreach (var word in words)
-                {
-                    System.Console.WriteLine($"<{word}>");
-                    count++;
-                }
-                Console.WriteLine("The sentece has n words:", count++);
-            }
+
+
+        public int CSIndex(int bla)
+        {
+            return blah;
+        }
+
+    class oldLine
+    {
+        internal static string ToUpperCase(char[] v)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static string ToUpperCase(string line)
+        {
+            throw new NotImplementedException();
         }
     }
 }
-
-
+}
