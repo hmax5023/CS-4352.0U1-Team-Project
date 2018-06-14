@@ -37,7 +37,7 @@ namespace CyberMiner
             string newLine = String.Join(" ", words);
             FileLines[lineCount - 1] = newLine;
         }
-
+        //returns a character in a word and line
         public char Char(int lineCount, int wordCount, int characterCount)
         {
             string line = FileLines[lineCount - 1];
@@ -47,7 +47,7 @@ namespace CyberMiner
             char character = word[characterCount - 1];
             return character;
         }
-
+        //returns the number of words in a line
         public int Word(int lineNumber)
         {
             string line = FileLines[lineNumber - 1];

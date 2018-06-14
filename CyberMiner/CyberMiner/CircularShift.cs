@@ -10,8 +10,10 @@ namespace CyberMiner
     //provides routines to access individual characters and words of shifted lines
     public class CircularShift
     {
+
+        public List<string> Shifts = new List<string>();
         //constructor
-        public LineStorage LineStorage { get; set; }
+        LineStorage LineStorage;
         public CircularShift(LineStorage LS)
         {
             LineStorage = LS;
@@ -19,14 +21,37 @@ namespace CyberMiner
 
         public void Setup()
         {
+            foreach (string line in LineStorage.FileLines)
+            {
+                string [] words = line.Split(' ');
+                int wordcount = words.Length;
+                string templine = "";
+                List<string> shifts = new List<string>();
+                List<string> Listofwords = line.Split(' ').ToList();
+                string firstword = "";
 
+                shifts.Add(String.Join(" ", words));
+                while (shifts.Count != wordcount)
+                {
+                    firstword = Listofwords[0];
+                    Listofwords.RemoveAt(0);
+                    Listofwords.Add(firstword);
+
+                    shifts.Add(String.Join(" ", Listofwords));
+                }
+
+                Shifts.AddRange(shifts);
+            }
+
+ 
         }
-        //causes the character in a word of the shift to be NextChar
-        private void SetChar(int Shift, int Word, int Character, char NextChar)
+
+        //causes a character in a word of a shift to be character
+        private void SetChar(int shiftCount, int wordCount, int characterCount, char character)
         {
 
         }
-
+        //returns a character in a word in a shift
         public string Char(int Shift, int Word, string NextChar)
         {
             return NextChar; //placeholder
@@ -39,3 +64,10 @@ namespace CyberMiner
         }
     }
 }
+//    for (int i = 0; i < wordcount; i++)
+//    {
+//        templine += words[i];
+
+//    }
+//    firstword = words[0];
+//    shifts.Add(templine);
