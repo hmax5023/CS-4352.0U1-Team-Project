@@ -11,12 +11,12 @@ namespace CyberMiner
         //constructor
         CircularShift CircularShift;
 
-        public List<string> AlphabetizedShifts { get; set; }
+        public List<URLDesc> AlphabetizedShifts { get; set; }
 
         public AlphabeticShift(CircularShift CS)
         {
             CircularShift = CS;
-            AlphabetizedShifts = new List<string>();
+            AlphabetizedShifts = new List<URLDesc>();
         }
 
         public void Alpha()
@@ -25,7 +25,7 @@ namespace CyberMiner
             //gets char and word from circular shift to get shifted lines 
             //and create alphabetized lines
             var list = CircularShift.Shifts;
-            list.Sort();
+            list.Sort((a, b) => a.Description.CompareTo(b.Description));
             AlphabetizedShifts = list;
 
         }

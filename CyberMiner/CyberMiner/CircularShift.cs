@@ -11,7 +11,7 @@ namespace CyberMiner
     public class CircularShift
     {
 
-        public List<string> Shifts = new List<string>();
+        public List<URLDesc> Shifts = new List<URLDesc>();
         //constructor
         LineStorage LineStorage;
         public CircularShift(LineStorage LS)
@@ -21,24 +21,34 @@ namespace CyberMiner
 
         public void Setup()
         {
-            foreach (string line in LineStorage.FileLines)
+            foreach (var line in LineStorage.FileLines)
             {
-                string [] words = line.Split(' ');
+                string [] words = line.Description.Split(' ');
                 int wordcount = words.Length;
                 string templine = "";
-                List<string> shifts = new List<string>();
-                List<string> Listofwords = line.Split(' ').ToList();
+                List<URLDesc> shifts = new List<URLDesc>();
+                List<string> Listofwords = line.Description.Split(' ').ToList();
                 string firstword = "";
 
-                shifts.Add(String.Join(" ", words));
+                shifts.Add(new URLDesc()
+                {
+                    Description = String.Join(" ", words),
+                    URL = line.URL
+                }
+                );
                 while (shifts.Count != wordcount)
                 {
                     firstword = Listofwords[0];
                     Listofwords.RemoveAt(0);
                     Listofwords.Add(firstword);
-
-                    shifts.Add(String.Join(" ", Listofwords));
+                    shifts.Add(new URLDesc()
+                    {
+                        Description = String.Join(" ", Listofwords),
+                        URL = line.URL
+                    });
                 }
+
+
 
                 Shifts.AddRange(shifts);
             }
