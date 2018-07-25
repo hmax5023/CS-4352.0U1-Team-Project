@@ -25,15 +25,15 @@ namespace CyberMiner
             //gets char and word from circular shift to get shifted lines 
             //and create alphabetized lines
             var list = CircularShift.Shifts;
-            list.Sort((a, b) => a.Description.CompareTo(b.Description));
+            list.OrderBy(l => l.Description);
             AlphabetizedShifts = list;
 
         }
-        public int CSIndex(int blah)
-        {
-            //returns the index of the circular shift which comes i-th in the ordering
-            return blah; //placeholder
-        }
+        //public int CSIndex(int blah)
+        //{
+        //    //returns the index of the circular shift which comes i-th in the ordering
+        //    return blah; //placeholder
+        //}
 
     }
 }

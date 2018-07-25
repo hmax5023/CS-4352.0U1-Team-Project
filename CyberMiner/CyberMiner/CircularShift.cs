@@ -25,7 +25,7 @@ namespace CyberMiner
             {
                 string [] words = line.Description.Split(' ');
                 int wordcount = words.Length;
-                string templine = "";
+                //string templine = "";
                 List<URLDesc> shifts = new List<URLDesc>();
                 List<string> Listofwords = line.Description.Split(' ').ToList();
                 string firstword = "";
@@ -47,9 +47,6 @@ namespace CyberMiner
                         URL = line.URL
                     });
                 }
-
-
-
                 Shifts.AddRange(shifts);
             }
 
@@ -57,21 +54,21 @@ namespace CyberMiner
         }
 
         //causes a character in a word of a shift to be character
-        private void SetChar(int shiftCount, int wordCount, int characterCount, char character)
-        {
+        //private void SetChar(int shiftCount, int wordCount, int characterCount, char character)
+        //{
 
-        }
-        //returns a character in a word in a shift
-        public string Char(int Shift, int Word, string NextChar)
-        {
-            return NextChar; //placeholder
-        }
+        //}
+        ////returns a character in a word in a shift
+        //public string Char(int Shift, int Word, string NextChar)
+        //{
+        //    return NextChar; //placeholder
+        //}
 
-        //returns number of words in shift
-        public int Word(int Shift)
-        {
-            return Shift; //placeholder
-        }
+        ////returns number of words in shift
+        //public int Word(int Shift)
+        //{
+        //    return Shift; //placeholder
+        //}
     }
 }
 //    for (int i = 0; i < wordcount; i++)
