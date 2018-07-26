@@ -11,30 +11,60 @@
     <br>
     @using (Html.BeginForm())
     {
-        //@Html.LabelFor(x => x.searchtext)
-        @Html.EditorFor(x => x.searchtext)
+
+        @Html.EditorFor(x => x.searchtext, new { @class = "form-control long-textbox" })
         @Html.ValidationMessageFor(x => x.searchtext)
         <button type="submit">Search</button>
-        <br><br>
-        @Html.CheckBoxFor(m => m.isCaseSensitive)
-        @Html.LabelFor(m => m.isCaseSensitive)
+        <br><br />
+
+
+
 
     }
+    <div class="row">
+        <div class="col-sm-6">
+            <b>Sort by:</b>
+            <select id="dropdowntipo">
+                <option value="frequent">Most frequently accessed</option>
+                <option value="ascending">Alphabetical ascending</option>
+                <option value="descending">Alphabetical descending</option>
+            </select>
+        </div>
+        <div class="col-sm-6">
 
-    <table style="width:100%">
-        <tr>
-            <th>Description</th>
-            <th>Url</th>
+            @Html.CheckBoxFor(m => m.isCaseSensitive)
+            @Html.LabelFor(m => m.isCaseSensitive)
+    </div>
+
+</center>
 
         </tr>
-        @foreach (var url in Model.URLModels)
-        {
-            <tr>
-                <td>@url.Description</td>
-                <td><a href="@url.URL1">@url.URL1</a></td>
+@foreach (var url in Model.URLModels)
+{
+    <font face="helvetica" font size="4">
+        <div align="left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12"></div>
+                    <li><a href="@url.URL1">@url.URL1</a> </li>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"></div>
+                    @url.Description
 
-            </tr>
-        }
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"></div>
+                    <font size="1">
+                        <a href="www.reportbrokenurl.com">Report broken URL</a>
+                    </font>
 
-    </table>
-</center>
+                </div>
+                <br>
+            </div>
+        </div>
+    </font>
+}
+<div>
+    <span style="float:right">Page 1 of 1</span>
+</div>
